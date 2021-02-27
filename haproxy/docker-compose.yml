@@ -1,0 +1,34 @@
+version: '3'
+services:
+  server:
+    container_name: 'haproxy'
+    image: haproxy
+    ports: 
+      - '8080:80'
+    volumes:
+      - './haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg'
+  app1:
+    container_name: 'app1'
+    hostname: app1
+    build: ../app
+    tty: true
+  app2:
+    container_name: 'app2'
+    hostname: app2
+    build: ../app
+    tty: true
+  app3:
+    container_name: 'app3'
+    hostname: app3
+    build: ../app
+    tty: true
+  app4:
+    container_name: 'app4'
+    hostname: app4
+    build: ../app
+    tty: true
+  app5:
+    container_name: 'app5'
+    hostname: app5
+    build: ../app
+    tty: true
